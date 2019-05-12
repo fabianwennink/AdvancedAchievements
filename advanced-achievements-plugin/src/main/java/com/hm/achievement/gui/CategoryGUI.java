@@ -247,13 +247,13 @@ public class CategoryGUI implements Reloadable {
 		// obfuscateNotReceived and/or obfuscateProgressiveAchievements in the config.
 		ItemMeta itemMeta = achItem.getItemMeta();
 		if (date != null) {
-			itemMeta.setDisplayName(translateColorCodes(langListAchievementReceived + name));
+			itemMeta.setDisplayName(translateColorCodes(langListAchievementReceived  + "&6&l" + name));
 		} else if (configObfuscateNotReceived || (configObfuscateProgressiveAchievements && ineligibleSeriesItem)) {
-			itemMeta.setDisplayName(translateColorCodes(langListAchievementNotReceived
+			itemMeta.setDisplayName(translateColorCodes(langListAchievementNotReceived + "&6&l"
 					+ StringHelper.removeFormattingCodes(name)));
 		} else {
 			itemMeta.setDisplayName(translateColorCodes(StringEscapeUtils.unescapeJava(langListAchievementNotReceived
-					+ StringHelper.removeFormattingCodes(name))));
+				+ "&6&l" + StringHelper.removeFormattingCodes(name))));
 		}
 
 		itemMeta.setLore(lore);
@@ -404,9 +404,9 @@ public class CategoryGUI implements Reloadable {
 			lore.add(langListGoal);
 			String strippedAchMessage = StringHelper.removeFormattingCodes(description);
 			if (configObfuscateNotReceived || (configObfuscateProgressiveAchievements && ineligibleSeriesItem)) {
-				lore.add(translateColorCodes(configListColorNotReceived + "&k" + randomiseParts(strippedAchMessage)));
+				lore.add(translateColorCodes("&f&k" + randomiseParts(strippedAchMessage)));
 			} else {
-				lore.add(translateColorCodes(configListColorNotReceived + "&o" + strippedAchMessage));
+				lore.add(translateColorCodes("&f" + strippedAchMessage));
 			}
 			lore.add("");
 			// Display progress if not Commands category.
@@ -471,7 +471,7 @@ public class CategoryGUI implements Reloadable {
 			statisticDouble = statistic;
 		}
 		int middleTextSize = FONT.getWidth(middleText);
-		middleText = configListColorNotReceived + "&o" + middleText;
+		middleText = configListColorNotReceived + middleText;
 
 		boolean hasDisplayedMiddleText = false;
 		int i = 1;
