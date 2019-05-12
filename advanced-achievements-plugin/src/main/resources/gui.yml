@@ -120,6 +120,10 @@ Commands:
   Item: bookshelf
 TargetsShot:
   Item: firework_star
+JobsReborn:
+  Item: clock
+Votes:
+  Item: gold_ingot
 
 #============================================================#
 # +--------------------------------------------------------+ #

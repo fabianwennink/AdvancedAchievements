@@ -190,6 +190,8 @@ list-smelting: "Items Smelt"
 list-commands: "Other Achievements"
 list-custom: "Custom Categories"
 list-targetsshot: "Targets Shot"
+list-jobsreborn: "Jobs Leveled"
+list-votes: "Times Voted"
 
 # Related to /aach toggle.
 toggle-displayed: "You will now be notified when other players get achievements."

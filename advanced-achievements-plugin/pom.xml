@@ -142,6 +142,22 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 
+		<!-- CUSTOM DEPENDENCIES -->
+		<dependency>
+			<groupId>com.gamingmesh.jobs</groupId>
+			<artifactId>Jobs</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../../Extra/Java Projects/__LIBRARIES__/plugins/JobsReborn.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.vexsoftware</groupId>
+			<artifactId>nuvotifier-universal</artifactId>
+			<version>2.5.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/../../Extra/Java Projects/__LIBRARIES__/plugins/NuVotifier.jar</systemPath>
+		</dependency>
+
 		<!-- Test dependencies -->
 		<dependency>
 			<groupId>org.mockito</groupId>

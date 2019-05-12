@@ -71,7 +71,7 @@ public class GUIItems implements Reloadable {
 
 	@Override
 	public void extractConfigurationParameters() throws PluginLoadError {
-		configListAchievementFormat = "&8" + mainConfig.getString("ListAchievementFormat", "%ICON% %NAME% %ICON%");
+		configListAchievementFormat = "&e" + mainConfig.getString("ListAchievementFormat", "%ICON% %NAME% %ICON%");
 		configIcon = StringEscapeUtils.unescapeJava(mainConfig.getString("Icon", "\u2618"));
 
 		langListAchievementsInCategoryPlural = LangHelper.get(GuiLang.ACHIEVEMENTS_IN_CATEGORY_PLURAL, langConfig);
@@ -163,7 +163,7 @@ public class GUIItems implements Reloadable {
 			itemMeta.setDisplayName("");
 		} else {
 			String formattedDisplayName = StringUtils.replaceEach(configListAchievementFormat,
-					new String[] { "%ICON%", "%NAME%" }, new String[] { configIcon, "&l" + displayName + "&8" });
+					new String[] { "%ICON%", "%NAME%" }, new String[] { configIcon, "&l" + displayName + "&7" });
 			itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', formattedDisplayName));
 		}
 
@@ -176,7 +176,7 @@ public class GUIItems implements Reloadable {
 			amountMessage = StringUtils.replaceOnce(langListAchievementInCategorySingular, "AMOUNT",
 					Integer.toString(totalAchievements));
 		}
-		itemMeta.setLore(Arrays.asList(ChatColor.translateAlternateColorCodes('&', "&8" + amountMessage)));
+		itemMeta.setLore(Arrays.asList(ChatColor.translateAlternateColorCodes('&', "&7" + amountMessage)));
 		item.setItemMeta(itemMeta);
 	}
 

@@ -729,7 +729,16 @@ Smelting:
     Message: 250 items smelt in a furnace!
     Name: smeltitems_250
     DisplayName: The Smelter
-          
+
+# When a player levels up a certain job.
+# Use a job name, in lower case.
+JobsReborn:
+  digger:
+    10:
+      Message: You reached level 10 with your digging job
+      Name: job_digger_1
+      DisplayName: Digger
+
 #===========================OOOOOOO===========================#
 # VII-----------------------------------------------------VII #
 # |               Command-based achievements                | #

@@ -360,15 +360,6 @@ public class PlayerAdvancedAchievementListener implements Listener, Reloadable {
 
 		displayReceiverMessages(player, nameToShowUser, messageToShowUser, rewardTexts);
 
-		// Notify other online players that the player has received an achievement.
-		for (Player p : advancedAchievements.getServer().getOnlinePlayers()) {
-			// Notify other players only if NotifyOtherPlayers is enabled and player has not used /aach toggle, or if
-			// NotifyOtherPlayers is disabled and player has used /aach toggle.
-			if (!p.getName().equals(player.getName()) && (configNotifyOtherPlayers ^ toggleCommand.isPlayerToggled(p))) {
-				displayNotification(player, nameToShowUser, p);
-			}
-		}
-
 		if (configFirework) {
 			displayFirework(player);
 		} else if (configSimplifiedReception) {

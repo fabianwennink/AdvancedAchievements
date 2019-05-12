@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import com.hm.achievement.listener.statistics.*;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
@@ -35,34 +36,6 @@ import com.hm.achievement.listener.FireworkListener;
 import com.hm.achievement.listener.ListGUIListener;
 import com.hm.achievement.listener.PlayerAdvancedAchievementListener;
 import com.hm.achievement.listener.QuitListener;
-import com.hm.achievement.listener.statistics.ArrowsListener;
-import com.hm.achievement.listener.statistics.BedsListener;
-import com.hm.achievement.listener.statistics.BreaksListener;
-import com.hm.achievement.listener.statistics.BreedingListener;
-import com.hm.achievement.listener.statistics.CaughtFishTreasuresListener;
-import com.hm.achievement.listener.statistics.ConnectionsListener;
-import com.hm.achievement.listener.statistics.ConsumedPotionsEatenItemsListener;
-import com.hm.achievement.listener.statistics.CraftsListener;
-import com.hm.achievement.listener.statistics.DeathsListener;
-import com.hm.achievement.listener.statistics.DropsListener;
-import com.hm.achievement.listener.statistics.EnchantmentsListener;
-import com.hm.achievement.listener.statistics.EnderPearlsDistancesListener;
-import com.hm.achievement.listener.statistics.FertilisingLegacyListener;
-import com.hm.achievement.listener.statistics.FertilisingListener;
-import com.hm.achievement.listener.statistics.ItemBreaksListener;
-import com.hm.achievement.listener.statistics.KillsListener;
-import com.hm.achievement.listener.statistics.LevelsListener;
-import com.hm.achievement.listener.statistics.MilksLavaWaterBucketsListener;
-import com.hm.achievement.listener.statistics.PetMasterGiveReceiveListener;
-import com.hm.achievement.listener.statistics.PickupsListener;
-import com.hm.achievement.listener.statistics.PlacesListener;
-import com.hm.achievement.listener.statistics.PlayerCommandsListener;
-import com.hm.achievement.listener.statistics.PlowingFireworksMusicDiscsListener;
-import com.hm.achievement.listener.statistics.ShearsListener;
-import com.hm.achievement.listener.statistics.SnowballsEggsListener;
-import com.hm.achievement.listener.statistics.TamesListener;
-import com.hm.achievement.listener.statistics.TargetsShotListener;
-import com.hm.achievement.listener.statistics.TradesAnvilsBrewingSmeltingListener;
 import com.hm.achievement.placeholder.AchievementCountBungeeTabListPlusVariable;
 import com.hm.achievement.placeholder.AchievementPlaceholderHook;
 import com.hm.achievement.runnable.AchieveDistanceRunnable;
@@ -120,6 +93,8 @@ public class PluginLoader {
 	private final QuitListener quitListener;
 	private final ListGUIListener listGUIListener;
 	private final PlayerAdvancedAchievementListener playerAdvancedAchievementListener;
+	private final JobsRebornListener jobsRebornListener;
+	private final VoteListener voteListener;
 
 	// Integrations with other plugins. Use lazy injection as these may or may not be used depending on runtime
 	// conditions.
@@ -161,7 +136,8 @@ public class PluginLoader {
 			TargetsShotListener targetsShotListener, EnderPearlsDistancesListener enderPearlsDistancesListener,
 			PetMasterGiveReceiveListener petMasterGiveReceiveListener, FireworkListener fireworkListener,
 			QuitListener quitListener, ListGUIListener listGUIListener,
-			PlayerAdvancedAchievementListener playerAdvancedAchievementListener,
+			PlayerAdvancedAchievementListener playerAdvancedAchievementListener, JobsRebornListener jobsRebornListener,
+			VoteListener voteListener,
 			Lazy<AchievementPlaceholderHook> achievementPlaceholderHook,
 			Lazy<AchievementCountBungeeTabListPlusVariable> achievementCountBungeeTabListPlusVariable,
 			AbstractDatabaseManager databaseManager, AsyncCachedRequestsSender asyncCachedRequestsSender,
@@ -204,6 +180,8 @@ public class PluginLoader {
 		this.quitListener = quitListener;
 		this.listGUIListener = listGUIListener;
 		this.playerAdvancedAchievementListener = playerAdvancedAchievementListener;
+		this.jobsRebornListener = jobsRebornListener;
+		this.voteListener = voteListener;
 		this.achievementPlaceholderHook = achievementPlaceholderHook;
 		this.achievementCountBungeeTabListPlusVariable = achievementCountBungeeTabListPlusVariable;
 		this.databaseManager = databaseManager;
@@ -278,6 +256,8 @@ public class PluginLoader {
 		registerListener(playerCommandsListener, MultipleAchievements.PLAYERCOMMANDS);
 		registerListener(breedingListener, MultipleAchievements.BREEDING);
 		registerListener(targetsShotListener, MultipleAchievements.TARGETSSHOT);
+		registerListener(jobsRebornListener, MultipleAchievements.JOBSREBORN);
+		registerListener(voteListener, NormalAchievements.VOTES);
 		registerListener(deathsListener, NormalAchievements.DEATHS);
 		registerListener(arrowsListener, NormalAchievements.ARROWS);
 		registerListener(snowballsEggsListener, NormalAchievements.SNOWBALLS, NormalAchievements.EGGS);

@@ -87,7 +87,7 @@ public class MockUtility {
 		if (serverMock == null) {
 			throw new IllegalStateException("mockServer needs to be called before withOnlinePlayers");
 		}
-		doReturn(Arrays.asList(players)).when(serverMock).getOnlinePlayers();
+		//doReturn(Arrays.asList(players)).when(serverMock).getOnlinePlayers();
 		return this;
 	}
 

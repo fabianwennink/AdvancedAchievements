@@ -66,7 +66,7 @@ public class MainGUI implements Reloadable {
 		langListGUITitle = ChatColor.translateAlternateColorCodes('&', LangHelper.get(GuiLang.GUI_TITLE, langConfig));
 
 		ItemMeta itemMeta = lockedItem.getItemMeta();
-		String displayName = "&8" + LangHelper.get(GuiLang.CATEGORY_NOT_UNLOCKED, langConfig);
+		String displayName = "&6" + LangHelper.get(GuiLang.CATEGORY_NOT_UNLOCKED, langConfig);
 		itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', displayName));
 		lockedItem.setItemMeta(itemMeta);
 	}

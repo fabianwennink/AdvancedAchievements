@@ -250,10 +250,10 @@ public class CategoryGUI implements Reloadable {
 			itemMeta.setDisplayName(translateColorCodes(langListAchievementReceived + name));
 		} else if (configObfuscateNotReceived || (configObfuscateProgressiveAchievements && ineligibleSeriesItem)) {
 			itemMeta.setDisplayName(translateColorCodes(langListAchievementNotReceived
-					+ "&k" + StringHelper.removeFormattingCodes(name)));
+					+ StringHelper.removeFormattingCodes(name)));
 		} else {
 			itemMeta.setDisplayName(translateColorCodes(StringEscapeUtils.unescapeJava(langListAchievementNotReceived
-					+ "&o" + StringHelper.removeFormattingCodes(name))));
+					+ StringHelper.removeFormattingCodes(name))));
 		}
 
 		itemMeta.setLore(lore);
