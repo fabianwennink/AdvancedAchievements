@@ -5,11 +5,9 @@ import com.hm.achievement.command.executable.AddCommand;
 import com.hm.achievement.command.executable.BookCommand;
 import com.hm.achievement.command.executable.CheckCommand;
 import com.hm.achievement.command.executable.DeleteCommand;
-import com.hm.achievement.command.executable.EasterEggCommand;
 import com.hm.achievement.command.executable.GenerateCommand;
 import com.hm.achievement.command.executable.GiveCommand;
 import com.hm.achievement.command.executable.HelpCommand;
-import com.hm.achievement.command.executable.InfoCommand;
 import com.hm.achievement.command.executable.InspectCommand;
 import com.hm.achievement.command.executable.ListCommand;
 import com.hm.achievement.command.executable.MonthCommand;
@@ -38,10 +36,6 @@ public interface CommandModule {
 
 	@Binds
 	@IntoSet
-	abstract AbstractCommand bindInfoCommand(InfoCommand infoCommand);
-
-	@Binds
-	@IntoSet
 	abstract AbstractCommand bindListCommand(ListCommand listCommand);
 
 	@Binds
@@ -59,10 +53,6 @@ public interface CommandModule {
 	@Binds
 	@IntoSet
 	abstract AbstractCommand bindGenerateCommand(GenerateCommand generateCommand);
-
-	@Binds
-	@IntoSet
-	abstract AbstractCommand bindEasterEggCommand(EasterEggCommand easterEggCommand);
 
 	@Binds
 	@IntoSet

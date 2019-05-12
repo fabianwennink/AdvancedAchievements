@@ -30,7 +30,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.hm.achievement.command.executable.AbstractCommand;
 import com.hm.achievement.command.executable.BookCommand;
-import com.hm.achievement.command.executable.EasterEggCommand;
 import com.hm.achievement.command.executable.GenerateCommand;
 import com.hm.achievement.command.executable.HelpCommand;
 import com.hm.achievement.command.executable.Upgrade13Command;
@@ -60,9 +59,6 @@ public class CommandTabCompleterTest {
 	private HelpCommand helpCommand;
 
 	@Mock
-	private EasterEggCommand easterEggCommand;
-
-	@Mock
 	private Upgrade13Command upgrade13Command;
 
 	@Mock
@@ -79,7 +75,6 @@ public class CommandTabCompleterTest {
 
 		Set<AbstractCommand> commands = new HashSet<>();
 		commands.add(bookCommand);
-		commands.add(easterEggCommand);
 		commands.add(upgrade13Command);
 		commands.add(generateCommand);
 		commands.add(helpCommand);
