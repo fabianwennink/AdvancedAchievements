@@ -61,6 +61,11 @@ public class ListGUIListener implements Listener {
 		// Prevent players from taking items out of the GUI.
 		event.setCancelled(true);
 
+		// Clicking empty slots should do nothing
+		if (event.getCurrentItem() == null) {
+			return;
+		}
+
 		int currentPage = ((AchievementInventoryHolder) inventory.getHolder()).getPageIndex();
 		Player player = (Player) event.getWhoClicked();
 		if (currentPage == MAIN_GUI_PAGE) {
