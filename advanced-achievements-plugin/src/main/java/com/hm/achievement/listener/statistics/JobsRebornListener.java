@@ -39,13 +39,13 @@ public class JobsRebornListener extends AbstractListener {
         if(player == null)
             return;
 
-        if (!shouldIncreaseBeTakenIntoAccountNoPermissions(player)) {
+        MultipleAchievements category = MultipleAchievements.JOBSREBORN;
+
+        if (!shouldIncreaseBeTakenIntoAccount(player, category)) {
             return;
         }
 
         String jobName = event.getJobName().toLowerCase();
-        MultipleAchievements category = MultipleAchievements.JOBSREBORN;
-
         Set<String> foundAchievements = findAchievementsByCategoryAndName(category, jobName);
 
         // Check if the jobName exists in the Jobs Reborn Category.
