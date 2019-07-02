@@ -51,7 +51,7 @@ public class JobsRebornListener extends AbstractListener {
         // Check if the jobName exists in the Jobs Reborn Category.
         // This check replaced the previous lookup check.
         if (player.hasPermission(category.toPermName() + '.' + jobName)) {
-            foundAchievements.forEach(achievement -> updateStatisticAndAwardAchievementsIfAvailable(player, category, achievement, 1));
+            updateStatisticAndAwardAchievementsIfAvailable(player, category, foundAchievements, 1);
         }
     }
 }
